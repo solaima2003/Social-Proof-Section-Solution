@@ -1,0 +1,199 @@
+:root {
+    --clr--primary--VeryDarkMagenta: hsl(300, 43%, 22%);
+    --clr--primary--SoftPink: hsl(333, 80%, 67%);
+
+    --clr--neutral--DarkGrayishMagenta: hsl(303, 10%, 53%);
+    --clr--neutral--LightGrayishMagenta: hsl(300, 24%, 96%);
+    --clr--neutral--White: hsl(0, 0%, 100%);
+
+    --ff-LeagueSpartan: "League Spartan", sans-serif;
+}
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  /* 3. Enable keyword animations */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+  
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 6. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 7. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 8. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 9. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    10. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  body {
+    background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+    background-position: left top, right bottom;
+    background-size: auto, 57rem;
+    background-repeat: no-repeat, no-repeat;
+    background-color: var(--clr--neutral--White);
+
+    font-family: var(--ff-LeagueSpartan);
+    font-size: 15px;
+    font-weight: 400;
+
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+  }
+
+  .container {
+    margin-top: 5rem;
+    width: 60rem;
+  }
+
+  /* flex group 1 */
+  .flex-group-1 { display: flex; }
+  /* top left section */
+  .top-left-sec { max-width: 25rem; }
+  .heading {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
+    color: var(--clr--primary--VeryDarkMagenta);
+  }
+  .info-1 {
+    font-weight: 500;
+    line-height: 1.2rem;
+    margin: 1.5rem 0.8rem 0rem 0rem;
+    color: var(--clr--neutral--DarkGrayishMagenta);
+  }
+  /* top right secton */
+  .grid-group {
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0.5rem 0rem;
+  }
+  .star { padding: 0rem 0.2rem; min-width: 0.8rem; height: 0.8rem; } 
+  .star-info {
+    color: var(--clr--primary--VeryDarkMagenta);
+    font-weight: 700;
+    padding: 0rem 1rem;
+  }
+  .star-flex-group { display: flex; justify-content: space-between; height: 1rem;}
+  .row {
+    background-color: var(--clr--neutral--LightGrayishMagenta);
+    display: inline-flex;
+    border-radius: 0.3rem;
+    width: 24rem;
+    min-height: 3rem;
+    align-items: center;
+    padding: 0rem 0rem 0rem 1.5rem;
+  }
+  .row-1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .row-2 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    margin-left: 2.5rem;
+  }
+  .row-3 {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    margin-left: 4.5rem;
+  }
+
+  /* flex group 2 */
+  .flex-group-2 { display: flex; justify-content: space-between; margin: 2rem 0rem; }
+  .item {
+    background-color: var(--clr--primary--VeryDarkMagenta);
+    width:19rem;
+    max-height: 12rem;
+    padding: 1.5rem;
+    border-radius: 0.4rem;
+    color: var(--clr--neutral--White);
+    line-height: 1.4rem;
+  }
+  .item-21 { margin-top: 0rem; }
+  .item-22 { margin-top: 1rem; }
+  .item-23 { margin-top: 2rem; }
+  .buyer-flex-group {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 1rem;
+  }
+  .profile-image {
+    width: 2.5rem;
+    border-radius: 100%;
+    margin-right: 1.5rem;
+  }
+  .buyer-name { font-weight: 700; }
+  .buyer-status { color: var(--clr--primary--SoftPink); }
+
+  footer {
+    bottom: 0;
+    position: absolute;
+    margin: 2rem;
+  }
+
+  /* responsive */
+  @media (max-width: 45rem){
+    body {
+      background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+      background-position: left top, right bottom;
+      background-size: 30rem, auto;
+      background-repeat: no-repeat, no-repeat;
+    }
+    .container { width: 23rem; padding: 1rem; } 
+    .flex-group-1  { display: block; text-align: center; }
+    .info-1 { font-size: 1.2rem; line-height: 1.6rem; margin: 2rem 0rem; }
+    .row { margin: 0rem; display: block; margin-bottom: 1rem; width: 100%; padding-top: 1rem; padding-bottom: 0.5rem; }
+    .grid-group { padding: 0rem; justify-items: center; }
+    .star-flex-group { display: flex; justify-content: center; height: 1rem; }
+    .star { width: auto; height: auto; padding: 0rem 0.3rem; }
+    .star-info { font-size: 1.1rem; padding-top: 0.7rem; padding-bottom: 0rem; }
+    .flex-group-2 { display: block; justify-items: center; }
+    .item { margin: 1rem 0rem; width: 100%; max-height: 100%; font-size: 1.1rem; padding: 2rem; }
+    footer { margin: 0rem; }
+  }
